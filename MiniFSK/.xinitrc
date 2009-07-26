@@ -1,4 +1,4 @@
-#xbindkeys &
+xbindkeys &
 conky &
 feh --bg-scale ~/.dwm/029.jpg &
 

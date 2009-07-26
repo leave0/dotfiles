@@ -3,6 +3,7 @@
 MiniFSK:
 ~/.conkyrc
 ~/.virc
+~/.xinitrc
 ~/.zshrc
 
 BigFSK

@@ -59,6 +59,7 @@ alias isdropbox='ps ax | grep dropbox'
 alias rewi='~/.scripts/rewi'
 alias flac2mp3='~/.scripts/flac2mp3'
 alias covertagger='~/.scripts/covertagger'
+alias todo='~/.scripts/todo/todo.sh -d ~/.scripts/todo/todo.cfg'
 
 keychain -q id_rsa
 source ~/.keychain/$HOST-sh

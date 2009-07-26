@@ -1,6 +1,6 @@
 #xbindkeys &
 conky &
-feh --bg-scale ~/.dwm/220.jpg &
+feh --bg-scale ~/.dwm/029.jpg &
 
 while true
 do

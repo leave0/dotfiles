@@ -61,5 +61,5 @@ ${color #4c4f54}${alignc}$mpd_title
 ${color }$mpd_bar 5, 100
 ${color }${alignc}${mpd_vol}% volume / ${mpd_bitrate} kbps
 ${color #ffffff}TODO.txt
-${head /home/fsk141/Dropbox/todo/todo.txt 2 20}
+${head /home/fsk141/Dropbox/todo/todo.txt 20 20}
 

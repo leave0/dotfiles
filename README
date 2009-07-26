@@ -3,6 +3,7 @@
 MiniFSK:
 ~/.conkyrc
 ~/.virc
+~/.xbindkeysrc
 ~/.xinitrc
 ~/.zshrc
 

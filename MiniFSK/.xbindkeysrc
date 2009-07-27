@@ -23,3 +23,4 @@ XF86Back
 #Play/Pause MPD
 "mpc toggle"
 m:0x0 + c:135
+Menu

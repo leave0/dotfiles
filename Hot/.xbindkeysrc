@@ -1,0 +1,41 @@
+#~/.xbindkeysrc
+
+#Volume Up
+"amixer set Master unmute 2+"
+m:0x0 + c:123
+XF86AudioRaiseVolume 
+
+#Volume Down
+"amixer set Master unmute 2-"
+m:0x0 + c:122
+XF86AudioLowerVolume 
+
+#Next MPD
+"mpc next"
+m:0x0 + c:167
+XF86Forward
+
+#Prev MPD
+"mpc prev"
+m:0x0 + c:166
+XF86Back
+
+#Play/Pause MPD
+"mpc toggle"
+m:0x0 + c:135
+
+#suspend & lock
+"sudo pm-suspend;slock"
+m:0x0 + c:150
+
+#suspend only
+"sudo pm-suspend"
+m:0x0 + c:244
+
+#lock
+"slock"
+m:0x0 + c:160
+
+#Wifite
+"sudo wifite"
+m:0x0 + c:156

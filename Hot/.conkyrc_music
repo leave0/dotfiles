@@ -1,0 +1,48 @@
+background no
+update_interval 2.0 
+total_run_times 0
+own_window yes
+own_window_transparent yes 
+own_window_type override
+double_buffer yes 
+draw_shades no
+minimum_size 400
+maximum_width 600
+draw_outline yes 
+draw_borders no
+stippled_borders 0
+border_width 1
+default_color d9d9d9
+default_shade_color c80000
+default_outline_color 383838
+alignment bottom_middle
+gap_x 0 
+gap_y 15
+no_buffers yes 
+cpu_avg_samples 2
+net_avg_samples 2
+text_buffer_size 4096
+
+TEXT
+${if_mpd_playing}
+${execi 5 /home/fsk141/.scripts/grabcover}
+${image /home/fsk141/.cover.jpg -s 200x170 -f 5 -p 175}
+
+
+
+
+
+
+
+
+
+
+
+
+$mpd_status: 
+(Rand: $mpd_random)
+${mpd_smart 34} [$mpd_bitrate]
+$mpd_bar
+
+${execi 5 /home/fsk141/.scripts/lyriks}
+${endif}

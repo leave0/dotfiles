@@ -1,7 +1,7 @@
 syntax enable " Syntax highlighting FTW
 "set nowrap " Don't wrap lines
 colorscheme zellner " This works good with my terminal 
-"set mouse=a " Enable mouse
+set mouse=a " Enable mouse
 set tabstop=4 " Tab = 4 spaces
 set showmatch " Show matching brackets
 set shiftwidth=4 " Autoindent width = 4 spaces
@@ -12,8 +12,12 @@ set incsearch " Show search items as you type
 set title " Sets the terminal title
 set history=1000 " remember more in history
 set undolevels=1000 " More undo
+set ruler " show location
 cmap w!! w !sudo tee % >/dev/null " For those times you forget sudo
 nmap ,n :NERDTreeToggle<CR> " NERDTree
+nmap ,t :!clear;aiksaurus 
+nmap ,d :!clear;sdcv 
+nmap ,s :setlocal spell spelllang=en_us<CR>
 
 " Status Line
 set laststatus=2

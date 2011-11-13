@@ -36,14 +36,18 @@ autoload -Uz compinit
 compinit
 
 #Aliases
+alias mwlan0='sudo macchanger wlan0 -m $1'
 alias ls='ls --color'
+alias up='sudo ifconfig wlan0 up'
+alias down='sudo ifconfig wlan0 down'
 alias guile='env LTDL_LIBRARY_PATH=/opt/local/lib guile'
 alias lyrics='~/.scripts/01-from-harddisk.pl'
-alias todo='~/Dropbox/Public/todo.txt_cli-2.7/todo.sh -n -d ~/Dropbox/Public/todo.txt_cli-2.7/todo.cfg'
+alias todo='/usr/bin/todo.sh -n -d ~/Dropbox/Public/todo.txt/todo.cfg'
 alias ccompile="gcc -W -Wall -ansi -pedantic -o $1 $2"
-alias android="~/Android_dev/android-sdk-mac_86/tools/android"
-alias adb="~/Android_dev/android-sdk-mac_86/platform-tools/adb"
-alias shost='ssh -R 7106:localhost:7106 fskonefo@fsk141.com'
+alias shost='ssh fskonefo@fsk141.com'
+alias mini='ssh shellmix.com'
+alias william='ssh fskspc.com'
+alias pickles='ssh nom@filmdom.me'
 alias amon='sudo modprobe -r rtl8187 && sudo modprobe r8187'
 alias aumon='sudo modprobe -r r8187 && sudo modprobe rtl8187'
 alias scan="sudo iwlist wlan0 scan | awk -F:= '/(ESSID|Address|Channel|Frequency|Quality|Encryption)/ { print substr(\$1,1) } '"
@@ -52,12 +56,10 @@ alias scan1="sudo iwlist wlan1 scan | awk -F:= '/(ESSID|Address|Channel|Frequenc
 alias scan1a="sudo iwlist wlan1 scan"
 alias ida="/opt/idaadv/idal"
 alias ida64="/opt/idaadv/idal64"
-alias webdev="sudo /etc/rc.d/httpd restart && sudo /etc/rc.d/mysqld restart"
 alias invert="xcalib -invert -alter"
-
-wcrack () {
-	sudo wifite -i wlan1 -console -d /home/fsk141/wordlists/AmiddasRevisedList.txt -wepw 10 -wpaw 5 -anon -pps 600 -e $1
-}
+alias dictionary="sdcv"
+alias history="history 0"
+alias private='encfs ~/Dropbox/Private ~/Private'
 
 rpass () {
 	if [[ -n $1 ]]; then
@@ -68,20 +70,35 @@ rpass () {
 	fi
 }
 
-enterbt () {
-	sudo chroot /home/fsk141/chroot/bt4 /bin/bash
-}
+webdev () {
+	if [[ "$1" == "nginx" ]]; then
+		if [[ -f /var/run/httpd/httpd.pid ]]; then
+			sudo rc.d stop httpd
+		fi
+			sudo rc.d start nginx
+			sudo rc.d start php-fpm
+			sudo rc.d restart mysqld
+	fi
 
-mountbt () {
-	# Mount system dirs
-	sudo mount --bind /dev/ /home/fsk141/chroot/bt4/dev
-	sudo mount --bind /dev/pts /home/fsk141/chroot/bt4/dev/pts
-	sudo mount -t proc /proc /home/fsk141/chroot/bt4/proc
-}
+	if [[ "$1" == "httpd" ]]; then
+		if [[ -f /var/run/nginx.pid ]]; then
+			sudo rc.d stop nginx
+			sudo rc.d stop php-fpm
+		fi
+			sudo rc.d start httpd
+			sudo rc.d restart mysqld
+	fi
 
-umountbt () {
-	# Unmount /proc & /dev
-	sudo umount /home/fsk141/chroot/bt4/dev
-	sudo umount /home/fsk141/chroot/bt4/dev/pts
-	sudo umount /home/fsk141/chroot/bt4/proc
+	if [[ -z "$1" ]]; then
+		if [[ -f /var/run/httpd/httpd.pid ]]; then
+			sudo rc.d stop httpd
+		fi
+		if [[ -f /var/run/nginx.pid ]]; then
+			sudo rc.d stop nginx
+			sudo rc.d stop php-fpm
+		fi
+		if [[ -f /var/run/mysqld/mysqld.pid ]]; then
+			sudo rc.d stop mysqld
+		fi
+	fi
 }

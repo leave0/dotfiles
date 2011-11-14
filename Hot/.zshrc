@@ -61,15 +61,6 @@ alias dictionary="sdcv"
 alias history="history 0"
 alias private='encfs ~/Dropbox/Private ~/Private'
 
-rpass () {
-	if [[ -n $1 ]]; then
-	cat /dev/urandom | tr -cd \[:graph:\] | fold -w $1 | head -n $2
-	else
-		echo "Usage:"
-		echo "     rpass [number of chars] [number of passwords]"
-	fi
-}
-
 webdev () {
 	if [[ "$1" == "nginx" ]]; then
 		if [[ -f /var/run/httpd/httpd.pid ]]; then

@@ -29,7 +29,7 @@ set mail_check = 60
 mailboxes     = "+INBOX"
 set spoolfile = "+INBOX"
 set postponed = "+[Gmail]/Drafts"
-set record 	  = "+[GMail]/Sent Mail"
+set record 	  = /dev/null
 
 # Need trash patch for this to work
 set trash = "+[Gmail]/Trash"

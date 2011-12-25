@@ -61,4 +61,4 @@ ${color0}Network:
 
 
 Todo:
-${tail /home/fsk141/Dropbox/Public/todo.txt/todo.txt 30}
+${execi 5 /usr/bin/todo.sh -n -d ~/Dropbox/Public/todo.txt/todo.cfg}

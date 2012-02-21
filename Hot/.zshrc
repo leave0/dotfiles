@@ -45,9 +45,6 @@ alias lyrics='~/.scripts/01-from-harddisk.pl'
 alias todo='/usr/bin/todo.sh -n -d ~/Dropbox/Public/todo.txt/todo.cfg'
 alias ccompile="gcc -W -Wall -ansi -pedantic -o $1 $2"
 alias shost='ssh fskonefo@fsk141.com'
-alias mini='ssh shellmix.com'
-alias william='ssh fskspc.com'
-alias pickles='ssh nom@filmdom.me'
 alias amon='sudo modprobe -r rtl8187 && sudo modprobe r8187'
 alias aumon='sudo modprobe -r r8187 && sudo modprobe rtl8187'
 alias scan="sudo iwlist wlan0 scan | awk -F:= '/(ESSID|Address|Channel|Frequency|Quality|Encryption)/ { print substr(\$1,1) } '"
@@ -59,7 +56,6 @@ alias ida64="/opt/idaadv/idal64"
 alias invert="xcalib -invert -alter"
 alias dictionary="sdcv"
 alias history="history 0"
-alias private='encfs ~/Dropbox/Private ~/Private'
 
 webdev () {
 	if [[ "$1" == "nginx" ]]; then
